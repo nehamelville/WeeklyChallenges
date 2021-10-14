@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -7,7 +8,9 @@ namespace ChallengesWithTestsMark8
     {
         public bool CollectionContainsWord(IEnumerable<string> words, string word, bool ignoreCase)
         {
-            throw new NotImplementedException();
+          
+            ignoreCase = words.Contains(word);
+            return ignoreCase;
         }
 
         public bool IsPrimeNumber(int num)
@@ -17,7 +20,7 @@ namespace ChallengesWithTestsMark8
 
         public int IndexOfLastUniqueLetter(string str)
         {
-            throw new NotImplementedException();
+            return 0;
         }
 
         public int MaxConsecutiveCount(int[] numbers)

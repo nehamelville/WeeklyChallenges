@@ -6,47 +6,155 @@ namespace ChallengesWithTestsMark8
     {
         public int AddEvenSubtractOdd(int[] numbers)
         {
-            throw new NotImplementedException();
+            int evens = 0;
+            int odds = 0;
+            
+            if (numbers == null || numbers.Length == 0)
+                return 0;
+            else
+            {
+                for(int i = 0; i < numbers.Length; i++)
+                {
+                    if(numbers[i]==0)
+                    {
+                        return 0;
+                    }
+                    else if (numbers[i]% 2 == 0)
+                    {
+                        evens += numbers[i];
+                    }
+                    else
+                    {
+                        odds += numbers[i]; ;
+                    }
+                }
+            }   
+            return evens - odds;
         }
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
-            throw new NotImplementedException();
+            int shortestLength = 0;
+            if (str1.Length<str2.Length)
+            {
+                shortestLength = str1.Length;
+            }
+            else
+            {
+                shortestLength = str2.Length;
+            }
+            if (str3.Length < shortestLength)
+            {
+                shortestLength = str3.Length;
+            }
+            else if (str4.Length < shortestLength)
+                shortestLength = str4.Length;
+                           
+            return shortestLength;
         }
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
         {
-            throw new NotImplementedException();
+            int smallestNumber = number1;           
+            smallestNumber = Math.Min(smallestNumber, number2);
+            smallestNumber = Math.Min(smallestNumber, number3);
+            smallestNumber = Math.Min(smallestNumber, number4);
+            return smallestNumber;
         }
 
         public void ChangeBusinessNameTo_TrueCoders(Business biz)
         {
-            throw new NotImplementedException();
+            biz.Name = "TrueCoders";
         }
 
         public bool CouldFormTriangle(int sideLength1, int sideLength2, int sideLength3)
         {
-            throw new NotImplementedException();
+            if (sideLength1 + sideLength2 > sideLength3 && sideLength3!=0 || sideLength1 + sideLength3 > sideLength2&& sideLength2!=0 || sideLength2 + sideLength3 > sideLength1&&sideLength1!=0)
+            {
+                return true;
+            }
+            else if (sideLength1 == sideLength2 && sideLength3 == sideLength1)
+            {
+                return true;
+            }
+            else if (sideLength1 <= 0 || sideLength2 <= 0 || sideLength3 <= 0)
+            {
+                return false;
+            }
+            else
+                return false;
+            
+            
         }
 
         public bool IsStringANumber(string input)
         {
-            throw new NotImplementedException();
+            decimal n;
+            bool isNumeric = decimal.TryParse(input, out n);
+            return isNumeric;
         }
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
         {
-            throw new NotImplementedException();
+            int nullCount = 0;
+            int itemCount = 0;
+            foreach (var item in objs)
+            {
+                if (item == null)
+                {
+                    nullCount++;
+                }
+                else
+                {
+                    itemCount++;
+                }                      
+            }
+            if (nullCount > itemCount)
+                return true;
+            else
+                return false;
         }
 
         public double AverageEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+          
+            double sum = 0;
+            double count = 0;
+            double odds = 0;
+            if (numbers==null||numbers.Length==0)
+            {
+                return 0;
+            }
+            else
+            {
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    if (numbers[i] % 2 == 0)
+                    {
+                        sum += numbers[i];
+                        count++;
+                    }
+                    else
+                    {
+                        odds++;
+                    }
+                }
+                if (odds >= 0 && count==0)
+             
+                return 0;
+            }
+            
+            return sum /count;
         }
 
         public int Factorial(int number)
         {
-            throw new NotImplementedException();
+            int fact = 1;     
+           for (int i = 1; i <= number; i++)
+            {
+                fact = fact * i;
+            }
+            return fact;
         }
     }
 }
