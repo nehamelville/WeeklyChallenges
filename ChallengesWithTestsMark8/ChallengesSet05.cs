@@ -32,15 +32,7 @@ namespace ChallengesWithTestsMark8
 
         public double[] GetEveryFourthElement(List<double> elements)
         {
-            int j = 0;
-            double[] array = new double[elements.Count];
-            
-            for (int i = 0; i <elements.Count ; i+=4)
-            {
-                array[j]=elements[i];
-                j++;
-            }
-            return array;
+            throw new NotImplementedException();
         }
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
